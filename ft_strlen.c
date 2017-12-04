@@ -6,10 +6,11 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 22:07:11 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/14 14:19:48 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/04 12:30:37 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
 size_t	ft_strlen(const char *s)

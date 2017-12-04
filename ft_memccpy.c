@@ -6,28 +6,28 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 12:33:04 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/20 18:20:44 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/04 11:32:02 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 #include <stdlib.h>
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
-size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char	*fro;
-	char	*to;
-	size_t	i;
+	unsigned char	*fro;
+	unsigned char	*to;
+	size_t			i;
 
-	fro = (char *)src;
-	to = (char *)dst;
+	fro = (unsigned char *)src;
+	to = (unsigned char *)dst;
 	i = 0;
-	while (fro[i] != '\0' && i < n)
+	while (i < n)
 	{
 		to[i] = fro[i];
-		if (fro[i] == (char)c)
-			return (&to[i + 1]);
+		if (fro[i] == (unsigned char)c)
+			return (to + i + 1);
 		i++;
 	}
 	return (NULL);

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/05 06:56:56 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 12:25:07 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int		ft_recursive_power(int nb, int power)
 {
-	int i;
-
-	i = ft_strlen(s1);
-	while (*s2)
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	if (power > 1)
 	{
-		s1[i] = *s2;
-		s2++;
-		i++;
+		nb = nb * ft_recursive_power(nb, power - 1);
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (nb);
 }

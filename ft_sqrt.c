@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/11 17:40:48 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 12:26:40 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int		ft_sqrt(int nb)
 {
-	int i;
+	int a;
 
-	i = ft_strlen(s1);
-	while (*s2)
+	a = 1;
+	if (nb <= 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	else
 	{
-		s1[i] = *s2;
-		s2++;
-		i++;
+		while (a <= nb / 2)
+		{
+			if (nb % a == 0)
+			{
+				if (nb / a == a)
+					return (a);
+			}
+			a++;
+		}
+		return (0);
 	}
-	s1[i] = '\0';
-	return (s1);
 }

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/15 16:50:11 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 11:30:07 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
+	int *array;
 	int i;
 
-	i = ft_strlen(s1);
-	while (*s2)
+	if (!(array = malloc(sizeof(*array) * length)))
+		return (NULL);
+	i = 0;
+	while (i < length)
 	{
-		s1[i] = *s2;
-		s2++;
+		array[i] = f(tab[i]);
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (array);
 }

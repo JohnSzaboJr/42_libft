@@ -6,21 +6,15 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 12:24:24 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/22 12:46:03 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/03 15:27:52 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_strequ(char const *s1, char const *s2)
 {
-	while (*s1 && *s2)
-	{
-		if (s1 == s2)
-		{
-			s1++;
-			s2++;
-		}
-		else
-			return (0);
-	}
-	return (!*s1 && !*s2) ? (1) : (0);
+	if (!s1 || !s2)
+		return (0);
+	return (!(ft_strcmp(s1, s2))) ? (1) : (0);
 }

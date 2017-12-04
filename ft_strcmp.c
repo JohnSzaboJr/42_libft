@@ -6,7 +6,7 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 15:50:03 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/21 15:59:20 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/03 14:15:55 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 	int len1;
 	int len2;
 
-	if (s1 == NULL || s2 == NULL)
-		return (0);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	if (len1 >= len2)

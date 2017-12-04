@@ -6,7 +6,7 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 17:21:10 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/21 10:20:21 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/02 12:16:09 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ char	*ft_strdup(const char *s1)
 	if (!new)
 		return (NULL);
 	new = ft_strcpy(new, s1);
-	free(new);
 	return (new);
 }

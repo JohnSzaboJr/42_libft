@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/06 14:09:28 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 12:33:13 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strrev(char *str)
 {
-	int i;
+	int		i;
+	int		j;
+	char	k;
 
-	i = ft_strlen(s1);
-	while (*s2)
+	i = 0;
+	j = ft_strlen(str) - 1;
+	k = str[0];
+	while (j > i)
 	{
-		s1[i] = *s2;
-		s2++;
+		k = str[i];
+		str[i] = str[j];
+		str[j] = k;
+		j--;
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (str);
 }

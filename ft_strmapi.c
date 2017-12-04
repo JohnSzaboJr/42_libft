@@ -6,7 +6,7 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 12:12:20 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/22 12:22:29 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/03 15:07:26 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	new = (char *)malloc(sizeof(*new) * (ft_strlen(s) + 1));
 	if (!new)
 		return (NULL);

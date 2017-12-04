@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/18 11:18:11 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 11:15:56 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int		ft_count_if(char **tab, int (*f)(char*))
 {
 	int i;
+	int j;
 
-	i = ft_strlen(s1);
-	while (*s2)
+	i = 0;
+	j = 0;
+	while (tab[i])
 	{
-		s1[i] = *s2;
-		s2++;
+		if (f(tab[i]) == 1)
+			j++;
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (j);
 }

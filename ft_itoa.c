@@ -6,7 +6,7 @@
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 15:00:30 by jszabo            #+#    #+#             */
-/*   Updated: 2017/11/23 16:44:13 by jszabo           ###   ########.fr       */
+/*   Updated: 2017/12/03 14:53:13 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ char			*ft_itoa(int n)
 		return (ft_special());
 	len = ft_determine_len(n, len);
 	len = (n == 0 || neg) ? len + 1 : len;
-	ans = (char *)malloc(sizeof(*ans) * (len + 1));
+	if (!(ans = (char *)malloc(sizeof(*ans) * (len + 1))))
+		return (NULL);
 	ans[len] = '\0';
 	while (len > 0)
 	{

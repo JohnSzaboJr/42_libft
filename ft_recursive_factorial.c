@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/04 16:55:18 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 12:22:15 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int	ft_recursive_factorial(int nb)
 {
-	int i;
+	int x;
 
-	i = ft_strlen(s1);
-	while (*s2)
+	x = nb;
+	if (nb == 0 || nb == 1)
+		return (1);
+	if (nb < 0 || nb > 12)
+		return (0);
+	if (x > 1)
 	{
-		s1[i] = *s2;
-		s2++;
-		i++;
+		x = nb * ft_recursive_factorial(nb - 1);
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (x);
 }

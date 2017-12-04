@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 15:39:26 by jszabo            #+#    #+#             */
-/*   Updated: 2017/12/03 15:40:07 by jszabo           ###   ########.fr       */
+/*   Created: 2017/09/15 15:56:22 by jszabo            #+#    #+#             */
+/*   Updated: 2017/12/04 11:26:30 by jszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int i;
 
-	i = ft_strlen(s1);
-	while (*s2)
+	i = 0;
+	while (i < length)
 	{
-		s1[i] = *s2;
-		s2++;
+		f(tab[i]);
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
 }
